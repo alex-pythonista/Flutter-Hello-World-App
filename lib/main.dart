@@ -6,35 +6,55 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(HelloApp());
 
-class HelloApp extends StatelessWidget {
+class HelloApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return HelloAppState();
+  }
+}
+
+class HelloAppState extends State<HelloApp> {
+  var questionIndex = 0;
+  void answerQuestion() {
+    setState(() {
+      questionIndex++;
+    });
+
+    print(questionIndex);
+    // print("Option Clicked!");
+  }
+
+  @override
   Widget build(BuildContext context) {
     var questions = [
-      "What is your favorite color?",
-      "What is your favorite sports?",
+      "What is your favorite World Cup team?",
+      "Who is your favorite player?",
     ];
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Meghar mon kharap!"),
+          title: Text("Quiz App!"),
         ),
         body: Column(
           children: [
-            Text("The question!"),
+            Text(questions[questionIndex]),
             ElevatedButton(
-              onPressed: null,
-              child: Text("Answer 1"),
+              onPressed: answerQuestion,
+              child: Text("Argentina"),
             ),
             ElevatedButton(
-              onPressed: null,
-              child: Text("Answer 1"),
+              onPressed: answerQuestion,
+              child: Text("Brazil"),
             ),
             ElevatedButton(
-              onPressed: null,
-              child: Text("Answer 1"),
+              onPressed: answerQuestion,
+              child: Text("Germany"),
             ),
             ElevatedButton(
-              onPressed: null,
-              child: Text("Answer 1"),
+              onPressed: answerQuestion,
+              child: Text("Portugal"),
             ),
           ],
         ),
