@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './questions.dart';
+import './answers.dart';
 // void main() {
 //   runApp(HelloApp());
 // }
@@ -22,6 +23,7 @@ class _HelloAppState extends State<HelloApp> {
       _questionIndex++;
     });
 
+    // ignore: avoid_print
     print(_questionIndex);
     // print("Option Clicked!");
   }
@@ -36,27 +38,15 @@ class _HelloAppState extends State<HelloApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Quiz App!"),
+          title: const Text("Quiz App!"),
         ),
         body: Column(
           children: [
             Question(questions[_questionIndex]),
-            ElevatedButton(
-              onPressed: _answerQuestion,
-              child: Text("Argentina"),
-            ),
-            ElevatedButton(
-              onPressed: _answerQuestion,
-              child: Text("Brazil"),
-            ),
-            ElevatedButton(
-              onPressed: _answerQuestion,
-              child: Text("Germany"),
-            ),
-            ElevatedButton(
-              onPressed: _answerQuestion,
-              child: Text("Portugal"),
-            ),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
           ],
         ),
       ),
