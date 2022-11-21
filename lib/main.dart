@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './questions.dart';
 // void main() {
 //   runApp(HelloApp());
 // }
@@ -10,18 +11,18 @@ class HelloApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return HelloAppState();
+    return _HelloAppState();
   }
 }
 
-class HelloAppState extends State<HelloApp> {
-  var questionIndex = 0;
-  void answerQuestion() {
+class _HelloAppState extends State<HelloApp> {
+  var _questionIndex = 0;
+  void _answerQuestion() {
     setState(() {
-      questionIndex++;
+      _questionIndex++;
     });
 
-    print(questionIndex);
+    print(_questionIndex);
     // print("Option Clicked!");
   }
 
@@ -39,21 +40,21 @@ class HelloAppState extends State<HelloApp> {
         ),
         body: Column(
           children: [
-            Text(questions[questionIndex]),
+            Question(questions[_questionIndex]),
             ElevatedButton(
-              onPressed: answerQuestion,
+              onPressed: _answerQuestion,
               child: Text("Argentina"),
             ),
             ElevatedButton(
-              onPressed: answerQuestion,
+              onPressed: _answerQuestion,
               child: Text("Brazil"),
             ),
             ElevatedButton(
-              onPressed: answerQuestion,
+              onPressed: _answerQuestion,
               child: Text("Germany"),
             ),
             ElevatedButton(
-              onPressed: answerQuestion,
+              onPressed: _answerQuestion,
               child: Text("Portugal"),
             ),
           ],
