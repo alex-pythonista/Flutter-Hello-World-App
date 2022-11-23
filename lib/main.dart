@@ -31,8 +31,18 @@ class _HelloAppState extends State<HelloApp> {
   @override
   Widget build(BuildContext context) {
     var questions = [
-      "What is your favorite World Cup team?",
-      "Who is your favorite player?",
+      {
+        "questionText": "What is your favorite color?",
+        "answers": ["Cyan", "Crimson Red", "Magenta", "Purple"],
+      },
+      {
+        "questionText": "Who is your favorite footballer?",
+        "answer": ["Neymar Jr", "Ronaldo", "Messi", "MBappe"],
+      },
+      {
+        "questionText": "Who do you think win this worldcup?",
+        "answer": ["Argentina", "Brazil", "Germany", "Ghana"]
+      }
     ];
 
     return MaterialApp(
