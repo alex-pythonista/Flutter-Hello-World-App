@@ -37,14 +37,14 @@ class _HelloAppState extends State<HelloApp> {
       },
       {
         "questionText": "Who is your favorite footballer?",
-        "answer": ["Neymar Jr", "Ronaldo", "Messi", "MBappe"],
+        "answers": ["Neymar Jr", "Ronaldo", "Messi", "MBappe"],
       },
       {
         "questionText": "Who do you think win this worldcup?",
-        "answer": ["Argentina", "Brazil", "Germany", "Ghana"]
+        "answers": ["Argentina", "Brazil", "Germany", "Ghana"]
       }
     ];
-
+    print(questions[_questionIndex]["questionText"]);
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -52,11 +52,11 @@ class _HelloAppState extends State<HelloApp> {
         ),
         body: Column(
           children: [
-            Question(questions[_questionIndex]),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
+            Question(questions[_questionIndex]["questionText"] as String),
+            ...(questions[_questionIndex]["answers"] as List<String>)
+                .map((answer) {
+              return Answer(_answerQuestion, answer);
+            }).toList()
           ],
         ),
       ),
