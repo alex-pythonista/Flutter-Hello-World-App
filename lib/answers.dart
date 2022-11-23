@@ -12,7 +12,7 @@ class Answer extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         onPressed: selectHandler,
-        child: Text("Argentina"),
+        child: Text(answerText),
       ),
     );
   }

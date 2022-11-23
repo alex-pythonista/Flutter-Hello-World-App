@@ -30,7 +30,7 @@ class _HelloAppState extends State<HelloApp> {
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
+    const questions = [
       {
         "questionText": "What is your favorite color?",
         "answers": ["Cyan", "Crimson Red", "Magenta", "Purple"],
