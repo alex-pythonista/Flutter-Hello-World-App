@@ -7,7 +7,7 @@ class Result extends StatelessWidget {
   Result(this.resultScore, this.resetQuiz);
 
   String get resultPhrase {
-    var resultText = "You did it";
+    String resultText;
     if (resultScore == 30) {
       resultText = "You are a genius!";
     } else if (resultScore > 30 && resultScore <= 60) {
